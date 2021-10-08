@@ -161,9 +161,8 @@
                     let cloudinaryUploadURL = `https://api.cloudinary.com/v1_1/dm9r6ilqz/upload`;
                     // var cors_url = "https://cors-anywhere.herokuapp.com/";
                     var cors_url = "https://protected-peak-41888.herokuapp.com/";
-                    // var cors_url = "https://salty-plateau-01712.herokuapp.com/";
                     let requestObj = {
-                        url: cors_url  + cloudinaryUploadURL,
+                        url: cloudinaryUploadURL,
                         method: "POST",
                         data: this.formData,
                     };
