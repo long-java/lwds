@@ -304,10 +304,11 @@
                     function() {
                     this.fileContents = reader.result;
                     this.prepareFormData();
-                    //   let cloudinaryUploadURL = `https://api.cloudinary.com/v1_1/${this.cloudName}/upload`;
                     let cloudinaryUploadURL = `https://api.cloudinary.com/v1_1/dm9r6ilqz/upload`;
+                    var cors_url = "https://protected-peak-41888.herokuapp.com/";
+
                     let requestObj = {
-                        url: cloudinaryUploadURL,
+                        url: cors_url + cloudinaryUploadURL,
                         method: "POST",
                         data: this.formData,
                     };
