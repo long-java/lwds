@@ -21,7 +21,7 @@ class TagService {
                     ->select('tags.*', 'users.user_web', 
                         DB::raw('(SELECT count(*) FROM tag_post WHERE tags.id = tag_post.tag_id )  as count_posts')    
                     )
-                    ->groupBy('tags.id');
+                    ->groupBy('tags.id','users.user_web');
                     
             if($e == 'popular'){
                 $query ->orderBy('count_posts','desc');  //sort by popular
