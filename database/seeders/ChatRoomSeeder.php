@@ -15,7 +15,7 @@ class ChatRoomSeeder extends Seeder
     public function run()
     {
         $chat_rooms = array(
-            array('id' => '2','name' => 'Generalll','created_at' => NULL,'updated_at' => NULL),
+            array('id' => '1','name' => 'General','created_at' => NULL,'updated_at' => NULL),
             array('id' => '2','name' => 'Laravel','created_at' => NULL,'updated_at' => NULL),
             array('id' => '3','name' => 'Vuejs','created_at' => NULL,'updated_at' => NULL)
         );

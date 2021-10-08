@@ -17,7 +17,7 @@ class CreatePostsTable extends Migration
             $table -> increments('id');
             $table -> integer('user_id');
             $table -> string('title');
-            $table -> string('content', 7000);
+            $table -> string('content', 8000);
             $table -> string('content_html', 12000);
             $table -> string('tag_id');
             $table -> integer('number_view')->default(0);
