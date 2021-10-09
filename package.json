@@ -1,6 +1,5 @@
 {
     "private": true,
-    
     "scripts": {
         "dev": "npm run development",
         "development": "mix",
@@ -29,6 +28,7 @@
     "dependencies": {
         "@ckeditor/ckeditor5-code-block": "^29.2.0",
         "@fortawesome/fontawesome-svg-core": "^1.2.36",
+        "@fortawesome/free-brands-svg-icons": "^5.15.4",
         "@fortawesome/free-solid-svg-icons": "^5.15.4",
         "@fortawesome/vue-fontawesome": "^2.0.2",
         "@johmun/vue-tags-input": "^2.1.0",
@@ -38,17 +38,14 @@
         "emoji-mart-vue": "^2.6.6",
         "express-vue": "^5.16.0",
         "firebase": "^9.0.2",
+        "hellojs": "^1.19.5",
         "jodit-vue": "^2.4.0",
         "vue-alertify": "^1.1.0",
+        "vue-hellojs": "0.0.4",
         "vue-loader": "^15.9.8",
         "vue-quill-editor": "^3.0.6",
         "vue-router": "^3.5.2",
+        "vue-social-auth": "^1.4.9",
         "vue-upload-component": "^2.8.22"
     }
-    
-
-
-    
-
-   
 }

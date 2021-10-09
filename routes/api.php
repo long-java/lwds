@@ -19,8 +19,13 @@ use App\Http\Controllers\FollowController;
 // });
 
 //Login Google
-Route::get('/auth/google', [SocialController::class, 'googleRedirect']);
-Route::get('/google/callback', [SocialController::class, 'googleCallback']);
+// Route::get('/auth/google', [SocialController::class, 'googleRedirect']);
+// Route::get('/google/callback', [SocialController::class, 'googleCallback']);
+
+Route::post('/socialite/{provider}', [SocialController::class, 'loginSocialite']);
+
+
+
 
 //Check Auth
 Route::middleware('auth:sanctum')->get('/athenticated', function () {
@@ -30,7 +35,6 @@ Route::middleware('auth:sanctum')->get('/athenticated', function () {
 //Login - Register
 Route::post("/login",[UserController::class,'login']);
 Route::post("/register",[RegisterController::class,'register']);
-
 
 
 

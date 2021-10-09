@@ -34,6 +34,21 @@ Vue.use(VueAlertify);
 // Vue.use(cors())
 
 
+//Hellojs - Login Google - Login Facebook
+const HelloJs = require('hellojs/dist/hello.all.min.js');
+const VueHello = require('vue-hellojs');
+HelloJs.init({
+  google: "941132357273-6p1j8pvb81nsdu3qr48bn9iv276mp2k9.apps.googleusercontent.com",
+  facebook: "351920813284012",
+  scope: 'email'
+}, {
+  redirect_uri: '/google/callback'
+});
+Vue.use(VueHello, HelloJs);
+// Vue.hello('google').login({
+//   scope: 'email'
+// });
+
 
 
 
@@ -45,9 +60,21 @@ Vue.use(VueAlertify);
 
 //fontawesome
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPlusSquare, faTrash, faCaretUp, faCaretDown, faBookmark, faStar, faUserPlus, faPenAlt, faEye, faComments, fas  } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faPlusSquare, faTrash, faCaretUp,faCaretDown,faBookmark,faStar,faUserPlus,faPenAlt, faEye, faComments, fas  );
+import { faPlusSquare, faTrash, faCaretUp, faCaretDown,  
+      faBookmark, faStar, faUserPlus, faPenAlt, faEye, faComments, fas } from '@fortawesome/free-solid-svg-icons'
+
+import {
+    faTwitter,
+    faFacebook,
+    faStackOverflow,
+    faGithub,
+    faGoogle
+} from "@fortawesome/free-brands-svg-icons";
+
+library.add(faPlusSquare, faTrash, faCaretUp,faCaretDown,faBookmark,faStar,faUserPlus,faPenAlt, faEye, faComments, fas, 
+    faTwitter,faGoogle,faFacebook,faGithub );
+
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 //CK editor

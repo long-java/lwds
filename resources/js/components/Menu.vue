@@ -45,7 +45,7 @@
 
                 <li>
                     <form @submit="searchMethod()" class="form-inline search" method="get">
-                        <input v-model="search" class="form-control mr-sm-2 input-search" type="search" placeholder="Search" aria-label="Search">
+                        <input v-model="search" class="form-control mr-sm-2 input-search" type="search" placeholder="Search tag or title" aria-label="Search">
                         <!-- <button class="btn btn-outline-success my-2 my-sm-0 bt-search" type="submit">Search</button> -->
                     </form>
                 </li>

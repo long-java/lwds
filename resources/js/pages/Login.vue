@@ -33,18 +33,20 @@
 			<form @submit="loginUser" method="post">
 				<h1>Sign in</h1>
 				<div class="social-container">
-					<a href="#" class="social" @click="loginFacebook" > F </a>
-					<a href="#" class="social">G</a>
-					<a href="#" class="social"><font-awesome-icon icon="users-slash" /></a>
+					<a href="#" class="social social-text" @click="auth('google')"> <font-awesome-icon :icon="['fab', 'google']" size="2x" class="icon alt"/>  </a>
+					<a href="#" class="social social-text" @click="auth('facebook')"> <font-awesome-icon :icon="['fab', 'facebook']" size="2x" class="icon alt"/>  </a>
+					<a href="#" class="social social-text" @click="auth('github')"> <font-awesome-icon :icon="['fab', 'github']" size="2x" class="icon alt"/>  </a>
+
 				</div>
 				<span>or use your account</span>
-				<span class="w-full text-red-500" v-if="errors[0]">{{errors}}</span>
+				<span class="txt-error w-full text-red-500" v-if="errors[0]">{{errors}}</span>
 				<input type="email" placeholder="Email" v-model="form.email" />
 				<input type="password" placeholder="Password" v-model="form.password" name="password"/>
 				<a href="#">Forgot your password?</a>
 				
 				<button @click.prevent="loginUser" type="submit">Sign In</button>
 			</form>
+	
 
 
 		</div>
@@ -62,6 +64,7 @@
 			</div>
 		</div>
 
+
     </div>  
 
     
@@ -74,32 +77,62 @@ export default {
             form:{
                 email: '',
                 password: '',
+				profile: '',
+				provider: '',
             },
             errors: []
         }
     },
     methods:{
-		loginFacebook(){
-			axios.get('/api/auth/google',{},{
-					headers:{
-                                'Content-Type': 'application/x-www-form-urlencoded',
-                                "Access-Control-Allow-Origin": "*",
-                                "X-CSRF-TOKEN": document.head.querySelector('meta[name="csrf-token"]').content
-                            }
-				}
-			)
-			
-			.then((res) =>{
 
-				console.log(res);
 
-                // localStorage.setItem('token', res.data.token);
-                // this.$router.push({ name: "posts"}); 
-                
-            }).catch((error) =>{
-                this.errors = error.response.data.message;
-            })
+		auth(provider) {
+			var vm = this;
+
+			const hello = this.hello;
+			hello(provider).login({
+					scope: 'email'
+				})
+				.then(() => {
+					const authRes = hello(provider).getAuthResponse();
+
+				hello(provider).api('me')
+				.then(function (json) {
+					const profile = json;
+
+					console.log(profile)
+					
+					vm.provider = provider;
+					vm.profile = profile;
+
+
+					vm.loginSocialite();
+
+
+
+				}, function (error) {
+					console.log(error)
+				});
+			})
 		},
+
+		loginSocialite() {
+			axios.post('/api/socialite/'+ this.provider,{
+				profile: this.profile
+			})
+			.then(res => {
+				console.log(res.data);
+				if(res.data.status == true){
+					localStorage.setItem('token', res.data.token);
+                	this.$router.push({ name: "posts"}); 
+				}
+
+			})
+
+		},
+
+
+
 
         loginUser(){
             axios.post('/api/login', this.form).then((res) =>{
@@ -109,6 +142,7 @@ export default {
                 
             }).catch((error) =>{
                 this.errors = error.response.data.message;
+				this.$alertify.error('<h3>'+ this.errors + '</h3>');
             })
         }
     }
@@ -117,6 +151,20 @@ export default {
 
 
 <style scoped>
+	.txt-error{
+		font-size: 17px;
+		font-style: italic;
+		color: red;
+	}
+
+	.social-text:hover{
+		background: rgb(200, 217, 228);
+	}
+
+	.social-text{
+		font-weight: bold;
+	}
+
 
 	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 

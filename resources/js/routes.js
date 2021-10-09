@@ -23,6 +23,7 @@ import my_follow_from from './components/MyFollowFrom'
 
 
 const routes = [
+
     { path: '*', component: notfound, name: 'notfound'},
     { path: '/exam', component: exam, name: 'exam'},
     {
