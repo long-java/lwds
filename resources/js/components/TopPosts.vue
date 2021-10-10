@@ -51,7 +51,7 @@ export default {
         getTopPosts(){
             axios.get("/api/posts?column=number_view&sort=DESC")
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 if(res.data.status == true){
                     this.topPosts = res.data.posts;
                 }else{

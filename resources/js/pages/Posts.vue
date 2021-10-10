@@ -177,7 +177,7 @@
             getAllPosts: function() {
                 axios.get('/api/posts?tag='+this.idTag+'&&isfollow='+this.isFollow +'&&search='+this.search)
                 .then(res => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     if(res.data.status == true){
                         this.posts = res.data.posts;
                     }else{

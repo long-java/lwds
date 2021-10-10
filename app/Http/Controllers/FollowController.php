@@ -24,12 +24,13 @@ class FollowController extends Controller
                     'status' => true,
                     'code' => 200,
                     'follow' => $follow,
+                    'message' => "Success"
                 ]);
             }else{
                 return response() -> json([
-                    'status' => false,
-                    'code' => 404,
-                    'message' => "Not Found"
+                    'status' => true,
+                    'code' => 200,
+                    'message' => "NotFound"
                 ]);
             }
 

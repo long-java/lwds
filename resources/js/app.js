@@ -45,6 +45,8 @@ HelloJs.init({
 }, {
   redirect_uri: '/google/callback'
 });
+
+
 Vue.use(VueHello, HelloJs);
 // Vue.hello('google').login({
 //   scope: 'email'

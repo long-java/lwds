@@ -102,7 +102,11 @@ export default {
             .then(res => { 
                 console.log(res.data);
                 if(res.data.status == true){
-                    this.followers = res.data.follow;
+                    if(res.data.message == "Success"){
+                        this.followers = res.data.follow;
+                    }else{
+                        this.followers = [];
+                    }
                 }else{
                     this.error = res.data.message;
                 }
