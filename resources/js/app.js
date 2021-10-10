@@ -39,7 +39,8 @@ const HelloJs = require('hellojs/dist/hello.all.min.js');
 const VueHello = require('vue-hellojs');
 HelloJs.init({
   google: "941132357273-6p1j8pvb81nsdu3qr48bn9iv276mp2k9.apps.googleusercontent.com",
-  facebook: "351920813284012",
+  // facebook: "351920813284012", //test
+  facebook: "624510002051128",  //real
   scope: 'email'
 }, {
   redirect_uri: '/google/callback'

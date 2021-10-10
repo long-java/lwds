@@ -36,4 +36,11 @@ return [
         'redirect' => env('GOOGLE_URL'), 
     ],
 
+    'facebook' => [
+        'client_id' => env('FACEBOOK_APP_ID'),  //client face của bạn
+        'client_secret' => env('FACEBOOK_APP_SECRET'),  //client app service face của bạn
+        'redirect' => env('FACEBOOK_APP_CALLBACK_URL'), //callback trả về
+    ],
+
+
 ];
