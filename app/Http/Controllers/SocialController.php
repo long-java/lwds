@@ -56,8 +56,9 @@ class SocialController extends Controller
 
             }else{
                 $user_web = $this -> stringHandling -> nameToUserWeb($profile['name']);
+                $maxId = DB::table('users')->max('id');
                 $createUser = User::create([
-                    'id' => ( DB::table('users')->max('id') ) + 1,
+                    'id' => $maxId + 1,
                     'name' => $profile['name'],
                     'user_web' => $user_web,
                     'email' => $profile['email'],
