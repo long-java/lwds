@@ -89,9 +89,17 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="comment-null" v-if="posts[0] == null">
+                        <h3>Chưa theo dõi ai, không có Posts nào để hiển thị... </h3>
+                    </div>
                     
                 </div>
+
+                
                 <!-- end =================================== -->
+
+                
 
 
                 <TopPosts/>
@@ -192,6 +200,18 @@
 
 
 <style scoped> 
+
+    .comment-null{
+        margin: auto;
+        width: 50%;
+        border: 3px solid green;
+        padding: 10px;
+        text-align: center;
+        margin-top: 40px;
+        margin-left: 20%;
+
+    }
+
     .ov{
         margin-bottom: 350px;
     }
