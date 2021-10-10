@@ -36,6 +36,9 @@ class ChatController extends Controller
         //
         public function newMessage(Request $request,$roomId){
             $newMessage = new ChatMessage();
+            //new
+            $newMessage->id = DB::table('chat_messages')->max('id') + 1;
+            //end new
             $newMessage->user_id = Auth::id();
             $newMessage->chat_room_id = $roomId;
             $newMessage->message = $request->message;
