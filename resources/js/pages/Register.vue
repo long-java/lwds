@@ -36,12 +36,18 @@
         <div class="form-container sign-up-container">
             <form @submit="saveForm" method="post">
                 <h1>Create Account</h1>
-                <div class="social-container">
+                <!-- <div class="social-container">
                     <a href="#" class="social">  <font-awesome-icon icon="user" />  </a>
                     <a href="#" class="social">  <font-awesome-icon icon="user" />  </a>
                     <a href="#" class="social">  <font-awesome-icon icon="user" />  </a>
-                </div>
-                <span>or use your email for registration</span>
+                </div> -->
+                <span>
+					<router-link class="nav-link" 
+                        to="/login">
+						Or click to login with <label class="lb-social"> Social Account </label>
+                    </router-link>
+					
+				</span> 
 				<span class="w-full text-red-500" v-if="errors.name">{{errors.name[0]}}</span>
 
                 <input type="text" placeholder="Name" v-model="form.name" />
@@ -103,6 +109,17 @@ export default {
 
 
 <style scoped>
+
+	.lb-social{
+		font-weight: bold;
+		font-size: 16px;
+		color: rgb(4, 20, 232);
+	}
+
+	.lb-social:hover{
+		color: red;
+		cursor: pointer;
+	}
 
 	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
