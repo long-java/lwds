@@ -90,7 +90,9 @@ class SocialController extends Controller
         }catch(\Exception $e){
             return response() -> json([
                 'status' => false,
-                'code' => Response::HTTP_INTERNAL_SERVER_ERROR
+                'case' => 'Exception Socilate',
+                'code' => Response::HTTP_INTERNAL_SERVER_ERROR,
+                'mess' => $e->getMessage(),
             ]);
         }
 
