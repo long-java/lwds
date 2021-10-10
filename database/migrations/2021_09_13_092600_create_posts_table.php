@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreatePostsTable extends Migration
 {
@@ -14,7 +15,7 @@ class CreatePostsTable extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table -> increments('id');
+            $table -> increments('id') -> default( DB::table('posts')->max('id') + 1 )  ;
             $table -> integer('user_id');
             $table -> string('title');
             $table -> string('content', 8000);

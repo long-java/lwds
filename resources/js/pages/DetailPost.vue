@@ -298,6 +298,7 @@
 
     .component-comment{
         margin-top: 50px;
+        margin-bottom: 200px;
     }
 
 
