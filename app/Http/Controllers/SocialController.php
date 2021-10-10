@@ -58,11 +58,6 @@ class SocialController extends Controller
                 $user_web = $this -> stringHandling -> nameToUserWeb($profile['name']);
                 $maxId = DB::table('users')->max('id');
 
-                return response() -> json([
-                    'maxId' => $maxId,
-                    'maxId2' => $maxId + 1
-                ]);
-
                 $createUser = User::create([
                     'id' => $maxId + 1,
                     'name' => $profile['name'],
@@ -77,6 +72,7 @@ class SocialController extends Controller
                 // $createUser -> roles() -> syncWithoutDetaching([2]);
                 UserDetail::Create(
                     [
+                        'id' => DB::table('user_details')->max('id'),
                         'user_id' => $createUser -> id,
                         'avatar' => $profile['picture'],
                     ]
