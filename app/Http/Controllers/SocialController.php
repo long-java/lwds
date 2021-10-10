@@ -10,6 +10,7 @@ use App\Models\UserDetail;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Symfony\Component\HttpFoundation\Response;
 use App\Services\StringHandling;
+use Illuminate\Support\Facades\DB;
 
 class SocialController extends Controller
 {
@@ -56,6 +57,7 @@ class SocialController extends Controller
             }else{
                 $user_web = $this -> stringHandling -> nameToUserWeb($profile['name']);
                 $createUser = User::create([
+                    'id' => ( DB::table('users')->max('id') ) + 1,
                     'name' => $profile['name'],
                     'user_web' => $user_web,
                     'email' => $profile['email'],
