@@ -49,6 +49,12 @@ class PostService {
             $i += 1;
         }
 
+        //new
+        if($post_id == null){
+            $post_id = DB::table('posts')->max('id') + 1;
+        }
+        //end new
+
         $post =  Post::updateOrCreate(
             [
                 'id' => $post_id
