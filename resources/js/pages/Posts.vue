@@ -91,7 +91,7 @@
                     </div>
 
                     <div class="comment-null" v-if="posts[0] == null">
-                        <h3>Chưa theo dõi ai, không có Posts nào để hiển thị... </h3>
+                        <h3>không có Posts nào để hiển thị... </h3>
                     </div>
                     
                 </div>
