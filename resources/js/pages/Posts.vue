@@ -46,7 +46,9 @@
                                     {{item.name}}
                                 </router-link>
 
-                                <label> {{item.time_before}} giờ trước -  3 phút đọc</label>  
+                                <label> {{item.time_before}} giờ trước 
+                                    <!-- -  3 phút đọc -->
+                                </label>  
                             </p>
 
                             <!-- <router-link class="link-detail" :to="'/detail-post/' + item.id">

@@ -517,6 +517,7 @@
         margin-left: 0px !important;
         color: red !important;
         font-weight: bold;
+        width: 140px;
     }
 
     .controler-header .h-mail{
