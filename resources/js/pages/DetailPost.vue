@@ -1,6 +1,7 @@
 <template>
     <div>
-        <img class="baner" src="/storage/img/logo3.png" alt="">
+        <!-- <img class="baner" src="/storage/img/logo3.png" alt=""> -->
+        <img class="baner" src="https://res.cloudinary.com/dm9r6ilqz/image/upload/v1634056288/Lazy/logo3_xofees.png" alt="">
         <div class="noti "> 
             <h5 class="fb"><a href="https://fb.com"> >> Tham gia Facebook group "Lazy Community" để cùng nhau học tập và kết nối >> </a> 
                 <router-link to="/post-up">

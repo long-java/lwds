@@ -18,11 +18,6 @@ mix.js('resources/js/app.js', 'public/js')
 
     
 
-// module.exports = {
-//     devServer: {
-//         proxy: 'https://api.cloudinary.com/'
-//     }
-// }
     
 
 
