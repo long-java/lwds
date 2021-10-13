@@ -7,7 +7,7 @@
                 <li class="nav-item title">
                     <h1 class="nav-title h1-logo">
                         <router-link class="logo"
-                            :to="{name: 'posts'}" > Lazy
+                            :to="{name: 'posts'}" > LWDS
                         </router-link>
                     </h1>
                 </li>

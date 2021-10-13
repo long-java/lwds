@@ -3,7 +3,7 @@
         <!-- <img class="baner" src="/storage/img/logo3.png" alt=""> -->
         <img class="baner" src="https://res.cloudinary.com/dm9r6ilqz/image/upload/v1634056288/Lazy/logo3_xofees.png" alt="">
         <div class="noti "> 
-            <h5 class="fb"><a href="https://fb.com"> >> Tham gia Facebook group "Lazy Community" để cùng nhau học tập và kết nối >> </a> 
+            <h5 class="fb"><a href="https://fb.com"> >>&ensp;LEWANDOWSKI&ensp;>>&ensp;Tham gia Facebook group "Lazy Community" để cùng nhau học tập và kết nối&ensp;>> </a> 
                 <router-link to="/post-up">
                     <button class="write-post"> Viết bài</button>
                 </router-link>
@@ -389,10 +389,10 @@
         padding: 10px 0px 10px 0px;
     }
     p img{
-        width: 90% !important;
-        height: 90% !important;
-        max-width: 600px !important;
-        max-height: 750px !important;
+        width: 80% !important;
+        height: 80% !important;
+        /* max-width: 600px !important;
+        max-height: 600px !important; */
         display: block;
         margin-left: auto;
         margin-right: auto;

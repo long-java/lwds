@@ -9,7 +9,7 @@
 
 
         <div class="noti "> 
-            <h5 class="fb"><a href="https://fb.com"> >> Tham gia Facebook group "Lazy Community" để cùng nhau học tập và kết nối >> </a> 
+            <h5 class="fb"><a href="https://fb.com"> >>&ensp;LEWANDOWSKI&ensp;>>&ensp;Tham gia Facebook group "Lazy Community" để cùng nhau học tập và kết nối&ensp;>> </a> 
                 <router-link to="/post-up">
                     <button class="write-post"> Viết bài</button>
                 </router-link>
