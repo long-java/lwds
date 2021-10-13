@@ -8,7 +8,7 @@
 
             <div class="row">
                 <label for="" class="error"> {{ error }}</label>
-                <textarea name="" id="" cols="145" rows="7" class="text-comment" v-model="commentPost.content">
+                <textarea name="" id="" cols="135" rows="6" class="text-comment" v-model="commentPost.content">
 
 
                 </textarea>

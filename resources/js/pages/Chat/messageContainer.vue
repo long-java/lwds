@@ -67,7 +67,7 @@ import messageItem from './messageItem.vue'
 					if(res.data == 1){
 						
 					}else{
-						this.error = 'Đăng nhập đã rồi Chat chứ bạn eyyyy... </br> Chưa đăng nhập mà đòi Chat cái gi... =)))';
+						this.error = 'Bạn phải đăng nhập mới được xem </br> tin nhắn và gửi tin nhắn...';
 					}
 				
 				})
@@ -106,7 +106,7 @@ import messageItem from './messageItem.vue'
     }
 
 	.chat-null{
-		font-size: 25px;
+		font-size: 20px;
 		padding-left: 27%;
 		padding-top: 23%;
 
@@ -122,7 +122,7 @@ import messageItem from './messageItem.vue'
 	}
 
 	.content{
-		height: 500px;
+		height: 430px;
 		border-bottom: 1px solid rgb(221, 205, 205) !important;
 	}
 

@@ -46,6 +46,7 @@
 
 	.message-content{
 		padding: 5px 5px 5px 5px;
+		font-size: 13px;
 	}
 
 	.ctn{
@@ -79,8 +80,8 @@
 	}
 
 	.avatar{
-		width: 38px;
-		height: 38px;
+		width: 33px;
+		height: 33px;
 		border-radius: 50%;
 		margin-top: 5px;
 	}
@@ -94,8 +95,13 @@
 		font-weight: bold;
 	}
 
+	.col2-1 a{
+		font-size: 13px;
+		
+	}
+
 	.col2-2{
-		margin-top: 10px;
+		margin-top: 7px;
 
 	}
 

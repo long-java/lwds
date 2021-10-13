@@ -55,6 +55,10 @@ export default {
         padding-left: 10px;
     }
 
+    .title h5{
+        font-size: 15px;
+    }
+
     .online{
         width: 15%;
         padding-top: 5px;

@@ -46,7 +46,7 @@
                                     {{item.name}}
                                 </router-link>
 
-                                <label> {{item.time_before}} giờ trước 
+                                <label class="time-before"> {{item.time_before}} giờ trước 
                                     <!-- -  3 phút đọc -->
                                 </label>  
                             </p>
@@ -206,6 +206,14 @@
 
 
 <style scoped> 
+    .time-before{
+        font-size: 13px;
+    }
+
+    .container{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
 
     .comment-null{
         margin: auto;
@@ -233,7 +241,7 @@
     .menu-item{
         width: 150px;
         padding-left: 20px;
-        padding-top: 13px;
+        padding-top: 11px;
     }
 
     .menu-item label{
@@ -242,7 +250,7 @@
 
     .menu{
         width: 100%;
-        height: 50px;
+        height: 45px;
         background: rgb(26, 10, 60);
         display: flex;
         padding-left: 13%;
@@ -250,11 +258,11 @@
     }
 
     .post-tag{
-        font-size: 12px;
+        font-size: 11px;
         background: #f4f4f5;
         border: 1px solid #909399;
         color: #909399;
-        height: 20px;
+        height: 18px;
         border-radius: 10%;
         margin-right: 5px;
         padding: 0px 8px 0px 8px;
@@ -317,13 +325,13 @@
     }
 
     .post-name{
-        font-size: 14px;
+        font-size: 15px;
         color: #990099;
          font-family: "Times New Roman", Times, serif;
     }
 
     .post-question{
-        font-size: 17px;
+        font-size: 15px;
         color:black;
         margin-top: -15px;
         font-family: Arial, Helvetica, sans-serif;
@@ -361,7 +369,7 @@
 
     .post-status-icon{
         display: inline-block;
-        font-size: 13px;
+        font-size: 11px;
         color: #9b9b9b;
         margin-right: 15px;
     }
@@ -387,14 +395,14 @@
 <style scoped>
     .noti h5 a{
         color: #fff !important;
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .write-post{
-        margin-left: 10%;
-        font-size:13px;
+        margin-left: 13%;
+        font-size:12px;
         font-weight: bold;
-        height: 26px !important;
+        height: 24px !important;
         width: 90px;
         color: rgb(20, 61, 28);
         background: rgb(226, 206, 206);
@@ -403,9 +411,9 @@
     }
     .noti{
         width: 100%;
-        height: 40px;
+        height: 35px;
         background: #660033;
-        padding-top: 8px;
+        padding-top: 5px;
     }
     .fb{
         color: #fff !important;

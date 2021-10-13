@@ -5,7 +5,7 @@
             <ul class="nav justify-content-center header-menu "  >
 
                 <li class="nav-item title">
-                    <h1 class="nav-title">
+                    <h1 class="nav-title h1-logo">
                         <router-link class="logo"
                             :to="{name: 'posts'}" > Lazy
                         </router-link>
@@ -43,7 +43,7 @@
                     </div>
                 </li> -->
 
-                <li>
+                <li class="right-li">
                     <form @submit="searchMethod()" class="form-inline search" method="get">
                         <input v-model="search" class="form-control mr-sm-2 input-search" type="search" placeholder="Search tag or title" aria-label="Search">
                         <!-- <button class="btn btn-outline-success my-2 my-sm-0 bt-search" type="submit">Search</button> -->
@@ -344,6 +344,23 @@
 </script>
 
 <style scoped>
+    .h1-logo{
+        margin-top: -5px;
+    }
+
+    .header-menu{
+        margin-bottom: -5px;
+    }
+
+    .right-li{
+        margin-left: 23%;
+    }
+
+    .nav-link{
+        font-size: 13px;
+    }
+
+
     .container{
         border: none;
     }
@@ -384,17 +401,9 @@
 <style scoped>
 
     .input-search{ 
-        height: 32px;
+        height: 26px;
+        margin-top: 5px;
     }
-
-    .bt-search{
-        height: 31px;
-        padding: 4px !important;
-    }
-
-
-
-
 
     img{
         width: 100%;
@@ -417,7 +426,7 @@
     }
 
     .search{
-        margin-left: 500px;
+        margin-left: 0px;
     }
 
     .login{
