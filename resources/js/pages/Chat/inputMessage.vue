@@ -210,10 +210,14 @@ export default {
 </script>
 
 <style scoped>
+    .icon img{
+        width: 27px !important;
+        height: 27px !important;
+    }
 
     .img-file{
-        width: 27px;
-        height: 27px;
+        width: 26px;
+        height: 26px;
         margin-top: 15px;
     }
 
@@ -224,7 +228,7 @@ export default {
     .img-emoji{
         width: 30px;
         height: 30px;
-        margin-right: 20px;
+        margin-right: 10px;
     }
 
 
@@ -236,7 +240,7 @@ export default {
         border-radius: 7px;
         color: white;
         background-color: rgb(238, 24, 24);
-        margin-top: -5px;
+        margin-top: 5px;
     }
 
     .contai-input{
@@ -253,7 +257,7 @@ export default {
 
         resize: none;
         /* overflow: hidden; */
-        min-height: 80px;
+        min-height: 70px;
         max-height: 200px;
     }
 

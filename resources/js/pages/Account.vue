@@ -196,7 +196,7 @@ export default {
     }
 
     .acc-menu {
-        margin-top: 3%;
+        margin-top: 2%;
         border: 1px solid gainsboro;
     }
 
@@ -213,12 +213,13 @@ export default {
 
     .div-rigth h2{
         line-height: 1.2;
+        font-size: 23px;
         
     }
 
     .avatar{
-        max-width:70px;
-        max-height:70px;
+        max-width:60px;
+        max-height:60px;
         border-radius: 50%;
     }
 
