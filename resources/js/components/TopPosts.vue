@@ -15,7 +15,7 @@
                 </h6>
 
                 <div class="post-status new-question-status">
-                    <div class="post-status-icon"><font-awesome-icon icon="vote-yea" /> {{item.number_vote}} </div>
+                        <div class="post-status-icon"><font-awesome-icon icon="vote-yea" /> {{item.number_vote}} </div>
 
                         <div class="post-status-icon"><font-awesome-icon icon="eye" /> {{item.number_view}} </div>
 
@@ -68,6 +68,14 @@ export default {
 </script>
 
 <style scoped> 
+    .post-status-icon{
+        font-size: 12px !important;
+    }
+
+    .post-question-title{
+        font-size: 13px;
+    }
+
     .link-detail{
         color: rgb(32, 30, 30);
     }
@@ -143,6 +151,7 @@ export default {
 
     .title-new{
         margin-left: 8%;
+        font-size: 13px;
     }
 
 

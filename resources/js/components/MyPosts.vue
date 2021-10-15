@@ -463,6 +463,7 @@
 
     .posts{
         height: 400px;
+        padding-left: 50px !important;
         /* border: 1px solid gray; */
     }
 
@@ -485,13 +486,13 @@
     }
 
     .post-name{
-        font-size: 14px;
+        font-size: 13px;
         color: #990099;
         font-family: "Times New Roman", Times, serif;
     }
 
     .post-question{
-        font-size: 16px;
+        font-size: 14px;
         color:black;
         margin-top: -15px;
         font-family: Arial, Helvetica, sans-serif;
@@ -506,8 +507,8 @@
     }
 
     .post-img img{
-        height: 40px;
-        width: 40px;
+        height: 35px;
+        width: 35px;
         border-radius: 50%;
         margin-top: 25%;
     }

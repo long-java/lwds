@@ -3,7 +3,7 @@
         <!-- <img class="baner" src="/storage/img/logo3.png" alt=""> -->
         <img class="baner" src="https://res.cloudinary.com/dm9r6ilqz/image/upload/v1634056288/Lazy/logo3_xofees.png" alt="">
         <div class="noti "> 
-            <h5 class="fb"><a href="https://fb.com"> >> Tham gia Facebook group "Lazy Community" để cùng nhau học tập và kết nối >> </a> 
+            <h5 class="fb"><a href="https://fb.com"> >>&ensp;LEWANDOWSKI&ensp;>>&ensp;Tham gia Facebook group "Lazy Community" để cùng nhau học tập và kết nối&ensp;>> </a> 
                 <router-link to="/post-up">
                     <button class="write-post"> Viết bài</button>
                 </router-link>
@@ -61,7 +61,7 @@
                                             <label class="h-mail"> @{{ post.user_web }} </label> 
 
                                             <button class="btn-follow"  v-on:click="follow"> 
-                                                <router-link class="h-name" :to="'/account/'+post.user_id">
+                                                <router-link :to="'/account/'+post.user_id">
                                                     Follow 
                                                 </router-link>
                                             </button>
@@ -297,9 +297,14 @@
 
 <style scoped>
 
+    .content{ 
+        padding-left: 50px;
+    }
+
     .component-comment{
         margin-top: 50px;
         margin-bottom: 200px;
+        padding-left: 70px;
     }
 
 
@@ -314,9 +319,9 @@
     }
 
     .post-relate{
-        /* background:#d9d9d9; */
         width: 100%;
         margin-top: 8%;
+        padding-left: 60px;
     }
 
     .control {position:fixed; top:0px; left:0; width:10%; height:100%; background:#EEE; overflow:auto;}
@@ -349,6 +354,7 @@
     @media screen and (max-width:1200px){
         .post-relate{margin-left: 60px}
         .controler-control{margin-left: 100px;}
+        
     }
 
     @media screen and (max-width:990px){
@@ -356,9 +362,6 @@
         
     }
 
-
-    /* menu */
-    
     @media screen and (min-width:1100px){
         .card-header {color:blue; font-size:100%; margin-left: 100px; }
     }
@@ -378,8 +381,6 @@
         margin-top: 0 !important;
         padding-top: 2px;
         padding-bottom: 3px;
-
-
     }
 
     .ql-syntax{
@@ -388,8 +389,10 @@
         padding: 10px 0px 10px 0px;
     }
     p img{
-        width: 90% !important;
-        height: 90% !important;
+        width: 80% !important;
+        height: 80% !important;
+        /* max-width: 600px !important;
+        max-height: 600px !important; */
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -402,6 +405,14 @@
 </style>
 
 <style scoped>
+
+    ::v-deep h2 span {
+        font-size: 19px;
+    }
+
+    ::v-deep p span {
+        font-size: 13px;
+    }
 
 
     .scrollbar {
@@ -422,7 +433,7 @@
     }
 
     .p-title{
-        font-size: 27px;
+        font-size: 23px;
         font-weight: bold;
     }
 
@@ -453,11 +464,13 @@
 
     .div-icon2{
         margin-left: 10%;
+        
     }
 
     .date{
         height: 20px;
         margin-bottom: 0px;
+        font-size: 13px;
     }
 
 
@@ -481,6 +494,7 @@
     .div-icon{
         display: flex;
         margin-right: 8%;
+        font-size: 12px;
     }
 
     .controler-icon{
@@ -506,8 +520,8 @@
     }
 
     .header-img img{
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         display: block;
 
@@ -518,20 +532,26 @@
         color: red !important;
         font-weight: bold;
         width: 140px;
+        font-size: 13px;
     }
 
     .controler-header .h-mail{
         margin-left: 10px !important;
+        font-size: 13px;
     }
 
     .btn-follow{
-        height: 20px;
-        width: 70px;
+        height: 18px;
+        width: 62px;
         border-radius: 5px;
-        font-size: 11px;
+        font-size: 11px !important;
         border: 1px solid #9d9d9d;
         background-color: #fff;
         margin-left: 30px;
+    }
+    .btn-follow a{
+        color: black !important;
+        
     }
 
 </style>
@@ -546,7 +566,7 @@
     }
 
     .control{
-        width: 9%;
+        width: 8%;
         /* background-color:papayawhip; */
         justify-content: center;
         padding-top: 30px;
@@ -701,14 +721,14 @@
 <style scoped>
     .noti h5 a{
         color: #fff !important;
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .write-post{
-        margin-left: 10%;
-        font-size:13px;
+        margin-left: 13%;
+        font-size:12px;
         font-weight: bold;
-        height: 26px !important;
+        height: 24px !important;
         width: 90px;
         color: rgb(20, 61, 28);
         background: rgb(226, 206, 206);
@@ -717,9 +737,9 @@
     }
     .noti{
         width: 100%;
-        height: 40px;
+        height: 35px;
         background: #660033;
-        padding-top: 8px;
+        padding-top: 5px;
     }
     .fb{
         color: #fff !important;

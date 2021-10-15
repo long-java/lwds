@@ -4,7 +4,7 @@
         <!-- <img class="baner" src="/storage/img/logo3.PNG" alt=""> -->
         <img class="baner" src="https://res.cloudinary.com/dm9r6ilqz/image/upload/v1634056288/Lazy/logo3_xofees.png" alt="">
         <div class="noti "> 
-            <h5 class="fb"><a href="https://fb.com"> >> Tham gia Facebook group "Viblo Community" để cùng nhau học tập và kết nối >> </a> 
+            <h5 class="fb"><a href="https://fb.com"> >>&ensp;LEWANDOWSKI&ensp;>>&ensp;Tham gia Facebook group "Lazy Community" để cùng nhau học tập và kết nối&ensp;>> </a> 
                 <router-link to="/post-up">
                     <button class="write-post"> Viết bài</button>
                 </router-link>
@@ -259,28 +259,28 @@
 <style scoped>
     .noti h5 a{
         color: #fff !important;
-        font-size: 16px;
+        font-size: 13px;
     }
+
     .write-post{
-        margin-left: 10%;
-        font-size:13px;
+        margin-left: 13%;
+        font-size:12px;
         font-weight: bold;
-        height: 26px !important;
+        height: 24px !important;
         width: 90px;
         color: rgb(20, 61, 28);
         background: rgb(226, 206, 206);
-        border-radius: 10px;    
+        border-radius: 10px;  
+
     }
     .noti{
         width: 100%;
-        height: 40px;
+        height: 35px;
         background: #660033;
-        padding-top: 8px;
+        padding-top: 5px;
     }
-
-
     .fb{
-        color: #fff;
+        color: #fff !important;
         text-align: center;
     }
     
