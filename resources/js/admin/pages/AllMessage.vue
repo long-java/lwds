@@ -221,7 +221,7 @@
       deleteMulti(){
         var str = '';
         for (var i = 0; i < this.selected.length; i++){
-          str += ','+this.selected[i].id;
+          str += this.selected[i].id + ',';
         }
 
         axios.delete('/api/messages/destroy/'+str)

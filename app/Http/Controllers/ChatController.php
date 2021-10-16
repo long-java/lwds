@@ -41,7 +41,9 @@ class ChatController extends Controller
     public function destroy(Request $request, $ids){
         try{
             // $ids = $request -> ids;
-            $rs = DB::table("chat_messages")->whereIn('id',explode(",",  $ids  ))->delete();
+            $mess = DB::table("chat_messages")->whereIn('id',explode(",",  $ids  ));
+
+            $rs = $mess -> delete();
 
             return response()->json([
                 'status' => true,
@@ -52,6 +54,7 @@ class ChatController extends Controller
         }catch(\Exception $e){
             return response()->json([
                 'ids' => $ids,
+                'idArr' => explode(",", $ids),
                 'status' => false,
                 'message' => $e
             ]);
