@@ -160,9 +160,11 @@
 </template>
 
 
-<script>
-    import VueTagsInput from '@johmun/vue-tags-input';
 
+<script>
+
+
+    import VueTagsInput from '@johmun/vue-tags-input';
     import 'quill/dist/quill.core.css'
     import 'quill/dist/quill.snow.css'
     import 'quill/dist/quill.bubble.css'
@@ -398,6 +400,9 @@
 
 }
 </script>
+
+
+
 
 <style scoped> 
     .follow-null{

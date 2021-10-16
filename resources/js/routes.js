@@ -19,10 +19,33 @@ import my_follow_to from './components/MyFollowTo'
 import my_follow_from from './components/MyFollowFrom'
 
 
+//ADMIN
+import menu_admin from './admin/pages/MenuAdmin'
+import dashboard from './admin/pages/Dashboard'
+import all_message from './admin/pages/AllMessage'
+
+
 
 
 
 const routes = [
+
+    //ADMIN
+    { 
+        path: '/ad', 
+        component: menu_admin, 
+        name: 'menu_admin', 
+        children: [
+            { path: '/', component: dashboard, name: 'dashboard'},
+            // { path: '/admin/users', component: user, name: 'user'},
+            { path: '/ad/all-messages', component: all_message, name: 'all_message'},
+        ]
+    
+    
+    },
+
+    
+
 
     { path: '*', component: notfound, name: 'notfound'},
     { path: '/exam', component: exam, name: 'exam'},

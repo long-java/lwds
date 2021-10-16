@@ -381,12 +381,14 @@
         margin-top: 0 !important;
         padding-top: 2px;
         padding-bottom: 3px;
+        font-size: 13px;
     }
 
     .ql-syntax{
         background: #f1f2f3 !important;
         color: black !important;
         padding: 10px 0px 10px 0px;
+        font-size: 13px;
     }
     p img{
         width: 80% !important;

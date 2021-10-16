@@ -59,6 +59,11 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
     Route::post("/chat/room/{roomId}/message",[ChatController::class,'newMessage']);
     //END CHAT
 
+    //ADMIN
+    Route::get("/get-all-messages",[ChatController::class,'getAllMessages']) -> withoutMiddleware('auth:sanctum');
+    Route::delete("/messages/{ids}",[ChatController::class,'destroy']) -> withoutMiddleware('auth:sanctum');
+    Route::put("/message/{ids}",[ChatController::class,'update']) -> withoutMiddleware('auth:sanctum');
+
 
     //My-follow
     Route::get("/my-follow/{id}",[FollowController::class,'getMyFollow']) -> withoutMiddleware('auth:sanctum');  //get list user (my follow to)
