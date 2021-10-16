@@ -38,9 +38,9 @@ class ChatController extends Controller
     }
 
     //Page ADMIN
-    public function destroy(Request $request){
+    public function destroy(Request $request, $ids){
         try{
-            $ids = $request -> ids;
+            // $ids = $request -> ids;
             $rs = DB::table("chat_messages")->whereIn('id',explode(",",  $ids  ))->delete();
 
             return response()->json([
