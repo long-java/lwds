@@ -62,7 +62,7 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
     //ADMIN
     Route::get("/get-all-messages",[ChatController::class,'getAllMessages']) -> withoutMiddleware('auth:sanctum');
     Route::delete("/messages/{ids}",[ChatController::class,'destroy']) -> withoutMiddleware('auth:sanctum');
-    Route::put("/message/{ids}",[ChatController::class,'update']) -> withoutMiddleware('auth:sanctum');
+    Route::put("/message/destroy/{ids}",[ChatController::class,'update']) -> withoutMiddleware('auth:sanctum');
 
 
     //My-follow

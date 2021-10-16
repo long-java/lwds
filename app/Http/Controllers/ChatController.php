@@ -51,6 +51,7 @@ class ChatController extends Controller
 
         }catch(\Exception $e){
             return response()->json([
+                'ids' => $ids,
                 'status' => false,
                 'message' => $e
             ]);

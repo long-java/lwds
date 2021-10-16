@@ -224,7 +224,7 @@
           str += ','+this.selected[i].id;
         }
 
-        axios.delete('/api/messages/'+str)
+        axios.delete('/api/messages/destroy/'+str)
         .then((res) => {
           console.log(res.data);
           this.initialize();
