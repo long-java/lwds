@@ -169,10 +169,14 @@
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-laptop"></i>
-                                <span>Layouts</span>
+                                <span>Message Manager</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="boxed_page.html">Boxed Page</a></li>
+                                <router-link class=""
+                                    :class="[{active: $route.name === 'all_message'}]" to="/ad/all-messages" >  All Message
+                                </router-link>
+
+
                                 <li><a href="horizontal_menu.html">Horizontal Menu</a></li>
                             </ul>
                         </li>
