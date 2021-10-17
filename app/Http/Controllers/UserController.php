@@ -57,10 +57,11 @@ class UserController extends Controller
             
             foreach($idsArr as $id){
                 $user = DB::table("users") -> where('id', $id);
-                $user_detail = DB::table("user_details") -> where('user_id', $id);
-
+                
                 if($user != null){
                     $rs = $user -> delete();
+                    
+                    $user_detail = DB::table("user_details") -> where('user_id', $id);
                     $rs2 = $user_detail -> delete();
                 }
 
