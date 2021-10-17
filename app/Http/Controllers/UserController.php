@@ -12,6 +12,116 @@ use Validator;
 class UserController extends Controller
 {
 
+    //ADMIN GET-ALL USERS
+    public function getAllUsers(Request $request){
+        try{
+            $name = $request -> name;
+            $user_web = $request -> user_web;
+            $email = $request -> email;
+
+            $query = DB::table('users');
+            $query -> select(
+                'users.id', 'users.name', 'users.user_web', 'users.email', 'users.created_at',
+                DB::raw('(SELECT count(*) FROM posts WHERE posts.user_id = users.id )  as count_posts'),
+            );
+
+            if($name != ''){
+                $query -> where('name','like','%'.$name.'%');
+            }
+            if($user_web != ''){
+                $query -> where('user_web','like','%'.$user_web.'%');
+            }
+            if($email != ''){
+                $query -> where('email','like','%'.$email.'%');
+            }
+
+            return response() -> json([
+                'status' => true,
+                'users' => $query -> orderBy('created_at','desc')  -> get(),
+            ]);
+
+        }catch(\Exception $e){
+            return response() -> json([
+                'status' => false,
+                'messages' => $e -> getMessage(),
+            ]);
+        }
+
+    }
+
+
+    //ADMIN - DESTROY USERS
+    public function destroy(Request $request, $ids){
+        try{
+            $idsArr = explode(",",  $ids  );
+            
+            foreach($idsArr as $id){
+                $user = DB::table("users") -> where('id', $id);
+                $user_detail = DB::table("user_details") -> where('user_id', $id);
+
+                if($user != null){
+                    $rs = $user -> delete();
+                    $rs2 = $user_detail -> delete();
+                }
+
+            }
+
+            return response()->json([
+                'status' => true,
+                'success'=>"Messages Deleted successfully"
+            ]);
+
+        }catch(\Exception $e){
+            return response()->json([
+                'ids' => $ids,
+                'idArr' => explode(",", $ids),
+                'status' => false,
+                'message' => $e
+            ]);
+        }
+    }
+
+    //ADMIN - UPDATE USER
+    public function update(Request $request, $id){
+        try{
+            $user = DB::table('users') 
+                    -> where('id', $id) 
+                    -> update([
+                        'name' => $request -> name,
+                        'user_web' => $request -> user_web,
+                        'email' => $request -> email,
+                    ]);
+
+            return response()->json([
+                'status' => true,
+                'user' => $user,
+                'success'=>"Messages Updated successfully"
+            ]);
+
+        }catch(\Exception $e){
+            return response()->json([
+                'status' => false,
+                'message' => $e -> getMessage(),
+            ]);
+        }
+
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //success: 200, falied: 404
     public function login(Request $request)
     {
@@ -110,59 +220,5 @@ class UserController extends Controller
     }
 
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

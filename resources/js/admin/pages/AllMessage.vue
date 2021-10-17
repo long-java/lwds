@@ -380,13 +380,15 @@
     }
 
     .panel{
-        width: 102%;
+        width: 103%;
         margin-top: -8px;
         margin-bottom: 9px !important;
+        margin-left: -9px;
     }
 
     .card{
-        width: 102%;
+        width: 103%;
+        margin-left: -9px;
     }
 
 

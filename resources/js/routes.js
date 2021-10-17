@@ -23,6 +23,7 @@ import my_follow_from from './components/MyFollowFrom'
 import menu_admin from './admin/pages/MenuAdmin'
 import dashboard from './admin/pages/Dashboard'
 import all_message from './admin/pages/AllMessage'
+import all_user from './admin/pages/AllUser'
 
 
 
@@ -36,8 +37,8 @@ const routes = [
         component: menu_admin, 
         name: 'menu_admin', 
         children: [
-            { path: '/', component: dashboard, name: 'dashboard'},
-            // { path: '/admin/users', component: user, name: 'user'},
+            { path: '/ad/', component: dashboard, name: 'dashboard'},
+            { path: '/ad/all-users', component: all_user, name: 'all_user'},
             { path: '/ad/all-messages', component: all_message, name: 'all_message'},
         ]
     

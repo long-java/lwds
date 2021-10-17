@@ -218,12 +218,16 @@
     .comment-null{
         margin: auto;
         width: 50%;
-        border: 3px solid green;
-        padding: 10px;
+        border: 2px solid green;
+        padding: 5px;
         text-align: center;
         margin-top: 40px;
         margin-left: 20%;
+    }
 
+    .comment-null h3{
+        font-size: 20px;
+        margin-top: 8px;
     }
 
     .ov{

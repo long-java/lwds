@@ -151,6 +151,7 @@
                 <!--search & user info end-->
             </div>
             </header>
+
             <!--header end-->
             <aside>
                 <div id="sidebar" class="nav-collapse">
@@ -158,10 +159,15 @@
                     <div class="leftside-navigation">
                         <ul class="sidebar-menu" id="nav-accordion">
                         <li>
-                            <a href="index.html"  class="active">
-                                <i class="fa fa-dashboard"></i>
-                                <span>Dashboard</span>
-                            </a>
+
+
+                            <router-link class=""
+                                :class="[{active: $route.name === 'dashboard'}]" to="/ad/" > 
+                                    <i class="fa fa-dashboard"></i> 
+                                    <span>  Dashboard </span>
+                            </router-link>
+
+
                         </li>
 
 
@@ -172,10 +178,11 @@
                                 <span>Message Manager</span>
                             </a>
                             <ul class="sub">
-                                <router-link class=""
-                                    :class="[{active: $route.name === 'all_message'}]" to="/ad/all-messages" >  All Message
-                                </router-link>
-
+                                <li>
+                                    <router-link class=""
+                                        :class="[{active: $route.name === 'all_message'}]" to="/ad/all-messages" >  All Message
+                                    </router-link>
+                                </li>
 
                                 <li><a href="horizontal_menu.html">Horizontal Menu</a></li>
                             </ul>
