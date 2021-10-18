@@ -399,6 +399,6 @@
 
 <style scoped src="../assets/bs3/css/bootstrap.min.css"></style>
 <style scoped src="../assets/css/bootstrap-reset.css"></style>
-<style scoped src="../assets/font-awesome/css/font-awesome.css"></style>
+
 <style scoped src="../assets/css/style.css"></style>
 <style scoped src="../assets/css/style-responsive.css"></style>
