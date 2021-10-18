@@ -9,15 +9,18 @@ import vuetify from './plugins/vuetify.js'
 
 
 //load script Admin
-import LoadScript from 'vue-plugin-load-script';
-Vue.use(LoadScript);
 // Vue.loadScript("/admin/js/jquery.js");
 // Vue.loadScript("/admin/bs3/js/bootstrap.min.js");
-Vue.loadScript("/ad/js/jquery.dcjqaccordion.2.7.js");
-Vue.loadScript("/ad/js/jquery.scrollTo.min.js");
-Vue.loadScript("/ad/js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js");
-Vue.loadScript("/ad/js/jquery.nicescroll.js");
-Vue.loadScript("/ad/js/scripts.js");
+
+import LoadScript from 'vue-plugin-load-script';
+Vue.use(LoadScript);
+window.onload = function() {
+  Vue.loadScript("/ad/js/jquery.dcjqaccordion.2.7.js");
+  Vue.loadScript("/ad/js/jquery.scrollTo.min.js");
+  Vue.loadScript("/ad/js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js");
+  Vue.loadScript("/ad/js/jquery.nicescroll.js");
+  Vue.loadScript("/ad/js/scripts.js");
+}
 
 
 
