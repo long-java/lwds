@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
+use Illuminate\Support\Facades\DB;
 
 
 class PostController extends Controller
@@ -17,16 +18,62 @@ class PostController extends Controller
         $this -> postService = $postService;
     }
 
+    //ADMIN - DELETE MULTI POST
+    public function destroyMulti($ids){
+        try{
+            $rs = $this -> postService -> destroyMulti($ids);
+            return response()->json([
+                'status' => true,
+                'success'=>"Messages Deleted successfully",
+                'rs' => $rs,
+            ]);
 
+        }catch(\Exception $e){
+            return response()->json([
+                'ids' => $ids,
+                'idArr' => explode(",", $ids),
+                'status' => false,
+                'message' => $e
+            ]);
+        }
+    }
+
+    //ADMIN - UPDATE POST
+    public function updateAdmin($post_id, Request $request){
+        $validator = Validator::make($request->all(), [
+            'title' => 'required', 'max:255',
+            'content_html' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return response() -> json([
+                'status' => false,
+                'code' => Response::HTTP_INTERNAL_SERVER_ERROR,
+                'message' => 'Fields cannot be left blank !!!',
+            ]);
+        }
+        $validated = $validator->validated();
+        $data['title'] = $validated['title'];
+        $data['content_html'] = $validated['content_html'];
+        $post = $this -> postService -> saveAdmin($data, $post_id);
+        return response() -> json([
+            'status' => true,
+            'code'   => Response::HTTP_OK,
+            'post' => $post,
+        ]);
+    }
+
+
+
+
+
+    //GUEST
     public function update($post_id, Request $request){
-
         $validator = Validator::make($request->all(), [
             'title' => 'required', 'max:255',
             'content' => 'required',
             'content_html' => 'required',
             'tags' => 'required'
         ]);
-
         if ($validator->fails()) {
             // return redirect('post-up') -> withErrors($validator) -> withInput();
             return response() -> json([
@@ -35,16 +82,12 @@ class PostController extends Controller
                 'message' => 'Fields cannot be left blank !!!',
             ]);
         }
-
         $validated = $validator->validated();
-
         $data['title'] = $validated['title'];
         $data['content'] = $validated['content'];
         $data['content_html'] = $validated['content_html'];
         $data['tags'] = $validated['tags'];
-
         $post = $this -> postService -> save($data, $post_id);
-
         return response() -> json([
             'status' => true,
             'code'   => Response::HTTP_OK,
@@ -123,7 +166,7 @@ class PostController extends Controller
     }
 
 
-    //get all post
+    //get all post (GUEST - AMIN)
     public function index(Request $request)
     {
         try{
@@ -263,11 +306,10 @@ class PostController extends Controller
     }
 
 
-    //Destroy Post
+    //Destroy Post (Only GUEST)
     public function destroy($id)
     {
         $rs = $this -> postService-> delete($id);
-
         return response() -> json([
             'status' => true,
             'rs' => $rs

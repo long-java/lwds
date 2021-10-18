@@ -137,10 +137,15 @@ export default {
         loginUser(){
             axios.post('/api/login', this.form).then((res) =>{
 
-				console.log(res.data);
-
+				// console.log(res.data);
                 localStorage.setItem('token', res.data.token);
-                this.$router.push({ name: "posts"}); 
+
+				if(res.data.role.id == 1){
+					this.$router.push({ name: "dashboard"}); 
+				}else{
+					this.$router.push({ name: "posts"}); 
+				}
+
                 // next()
                 
             }).catch((error) =>{

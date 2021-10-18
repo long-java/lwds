@@ -10,12 +10,38 @@ use Illuminate\Support\Facades\DB;
 
 class PostService {
 
+    //ADMIN - DELETE MULTI - POST
+    public function destroyMulti($ids){
+        $idsArr = explode(",",  $ids  );
+        foreach($idsArr as $id){
+            $post = Post::find($id);
+            if($post != null){
+                $rs = $post -> delete();
+                $rs2 = $post -> tags() -> detach();
+            }
+        }
+        return $rs;
+    }
+
+
+
+    //SAVE - ADMIN - UPDATE ONLY
+    public function saveAdmin($data, $post_id = null) {
+        $post = Post::find($post_id);
+        if($post != null){
+            $post -> update([
+                'title' => $data['title'],
+                'content_html' => $data['content_html'],
+            ]);
+        }
+        return $post;
+    }
+
+
     function delete($post_id){
         $post = Post::find($post_id);
-         $post -> tags() -> detach();
-
+        $post -> tags() -> detach();
         $post -> delete();
-
         return true;
     }
 

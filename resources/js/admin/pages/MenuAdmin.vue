@@ -8,8 +8,11 @@
             <!--logo start-->
             <div class="brand">
 
-                <a href="index.html" class="logo">
-                    <img src="images/logo.png" alt="">
+                <a href="#" class="logo">
+                    <img src="/images/logo.png"
+                        style="width: 150%; height: 150%;"
+                    
+                    >
                 </a>
                 <div class="sidebar-toggle-box">
                     <div class="fa fa-bars"></div>
@@ -158,21 +161,19 @@
                     <!-- sidebar menu start-->            
                     <div class="leftside-navigation">
                         <ul class="sidebar-menu" id="nav-accordion">
+
+
+
+
+
+
                         <li>
-
-
-
-
-
-
                             <router-link class=""
                                 :class="[{active: $route.name === 'dashboard'}]" to="/admin/" > 
                                     <i class="fa fa-dashboard"></i> 
                                     <!-- <font-awesome-icon class="icon  controler-icon" icon="star" size="1x" :style="{ color: '#9b9b9b' }"/> -->
                                     <span>  Dashboard </span>
                             </router-link>
-
-
                         </li>
 
 
@@ -189,7 +190,6 @@
                                         :class="[{active: $route.name === 'all_message'}]" to="/admin/all-messages" >  All Message
                                     </router-link>
                                 </li>
-
                                 <li><a href="horizontal_menu.html">Horizontal Menu</a></li>
                             </ul>
                         </li>
@@ -207,18 +207,29 @@
                                         :class="[{active: $route.name === 'all_user'}]" to="/admin/all-users" >  All User
                                     </router-link>
                                 </li>
+                                <li><a href="buttons.html">Buttons</a></li>
+                            </ul>
+                        </li>
+
+
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <i class="fa fa-bullhorn"></i>
+                                <!-- <font-awesome-icon class="icon  controler-icon" icon="star" size="1x" :style="{ color: '#9b9b9b' }"/> -->
+                                <span>Post Manager </span>
+                            </a>
+                            <ul class="sub">
+                                <li>
+                                    <router-link class=""
+                                        :class="[{active: $route.name === 'all_post'}]" to="/admin/all-posts" >  All Post
+                                    </router-link>
+                                </li>
 
                                 <li><a href="buttons.html">Buttons</a></li>
                             </ul>
                         </li>
 
-                        <li>
-                            <a href="fontawesome.html">
-                                <i class="fa fa-bullhorn"></i>
-                                <!-- <font-awesome-icon class="icon  controler-icon" icon="star" size="1x" :style="{ color: '#9b9b9b' }"/> -->
-                                <span>Fontawesome </span>
-                            </a>
-                        </li>
 
                         <li class="sub-menu">
                             <a href="javascript:;">
@@ -447,6 +458,10 @@
 <style scoped src="../assets/font-awesome/css/font-awesome.css"></style>
 
 <style scoped>
+    .logo{
+            margin: 15px 0 0 35px !important; 
+    }
+
     #sidebar{
         width: 200px;
     }

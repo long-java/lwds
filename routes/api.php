@@ -62,13 +62,17 @@ Route::group(['middleware' => 'checkrole'], function(){
 
     //ADMIN - MESSAGES
     Route::get("/get-all-messages",[ChatController::class,'getAllMessages']);
-    Route::delete("/messages/destroy/{ids}",[ChatController::class,'destroy']);
+    Route::delete("/messages/destroy/{ids}",[ChatController::class,'destroy']);  //delete Multi
     Route::put("/message/{id}",[ChatController::class,'update']);
     
     //ADMIN - USERS
     Route::get("/get-all-users",[UserController::class,'getAllUsers']);
-    Route::delete("/users/destroy/{ids}",[UserController::class,'destroy']);
+    Route::delete("/users/destroy/{ids}",[UserController::class,'destroy']);  //Delete Multi
     Route::put("/user/{id}",[UserController::class,'update']);
+
+    //ADMIN - POSTS
+    Route::put("/admin/post/{id}",[PostController::class,'updateAdmin']);
+    Route::delete("/admin/post/destroy/{ids}",[PostController::class,'destroyMulti']) -> withoutMiddleware('checkrole');   //Delete Multi
 
 
 });
@@ -83,10 +87,6 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
     Route::get("/chat/room/{roomId}/messages",[ChatController::class,'messages']);
     Route::post("/chat/room/{roomId}/message",[ChatController::class,'newMessage']);
     //END CHAT
-
-
-
-
 
 
     //My-follow
