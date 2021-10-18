@@ -53,7 +53,7 @@ Route::get("/tags",[TagController::class,'index']);
 
 
 //MIDDLEWARE -> CHECK_ROLE => ADMIN
-Route::group(['middleware' => 'api'], function(){
+Route::group(['middleware' => 'checkrole'], function(){
 
     //CHECK ROUTE
     Route::get("/check-role-admin",function() {
