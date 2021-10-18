@@ -373,23 +373,23 @@
 
 <style scoped>
 
-    .ov{
-        margin-left: 0px;
-        margin-top: 0px;
-        padding-right: 10px;
-    }
+  .ov{
+      margin-left: 0px;
+      margin-top: 0px;
+      padding-right: 10px;
+  }
 
-    .panel{
-        width: 103%;
-        margin-top: -8px;
-        margin-bottom: 9px !important;
-        margin-left: -9px;
-    }
+  .panel{
+      width: 103%;
+      margin-top: -8px;
+      margin-bottom: 9px !important;
+      margin-left: -9px;
+  }
 
-    .card{
-        width: 103%;
-        margin-left: -9px;
-    }
+  .card{
+      width: 103%;
+      margin-left: -9px;
+  }
 
 
 </style>
