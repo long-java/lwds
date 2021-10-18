@@ -163,7 +163,8 @@
 
                             <router-link class=""
                                 :class="[{active: $route.name === 'dashboard'}]" to="/admin/" > 
-                                    <i class="fa fa-dashboard"></i> 
+                                    <!-- <i class="fa fa-dashboard"></i>  -->
+                                    <font-awesome-icon class="icon  controler-icon" icon="star" size="1x" :style="{ color: '#9b9b9b' }"/>
                                     <span>  Dashboard </span>
                             </router-link>
 
@@ -174,7 +175,8 @@
 
                         <li class="sub-menu">
                             <a href="javascript:;">
-                                <i class="fa fa-laptop"></i>
+                                <!-- <i class="fa fa-laptop"></i> -->
+                                <font-awesome-icon class="icon  controler-icon" icon="star" size="1x" :style="{ color: '#9b9b9b' }"/>
                                 <span>Message Manager</span>
                             </a>
                             <ul class="sub">
@@ -191,7 +193,8 @@
 
                         <li class="sub-menu">
                             <a href="javascript:;">
-                                <i class="fa fa-book"></i>
+                                <!-- <i class="fa fa-book"></i> -->
+                                <font-awesome-icon class="icon  controler-icon" icon="star" size="1x" :style="{ color: '#9b9b9b' }"/>
                                 <span>User Manager</span>
                             </a>
                             <ul class="sub">
@@ -204,15 +207,19 @@
                                 <li><a href="buttons.html">Buttons</a></li>
                             </ul>
                         </li>
+
                         <li>
                             <a href="fontawesome.html">
-                                <i class="fa fa-bullhorn"></i>
+                                <!-- <i class="fa fa-bullhorn"></i> -->
+                                <font-awesome-icon class="icon  controler-icon" icon="star" size="1x" :style="{ color: '#9b9b9b' }"/>
                                 <span>Fontawesome </span>
                             </a>
                         </li>
+
                         <li class="sub-menu">
                             <a href="javascript:;">
-                                <i class="fa fa-th"></i>
+                                <!-- <i class="fa fa-th"></i> -->
+                                <font-awesome-icon class="icon  controler-icon" icon="star" size="1x" :style="{ color: '#9b9b9b' }"/>
                                 <span>Data Tables</span>
                             </a>
                             <ul class="sub">
@@ -225,7 +232,8 @@
  
                         <li class="sub-menu">
                             <a href="javascript:;">
-                                <i class="fa fa-envelope"></i>
+                                <!-- <i class="fa fa-envelope"></i> -->
+                                <font-awesome-icon class="icon  controler-icon" icon="star" size="1x" :style="{ color: '#9b9b9b' }"/>
                                 <span>Mail </span>
                             </a>
                             <ul class="sub">
@@ -238,7 +246,8 @@
 
                         <li>
                             <a href="login.html">
-                                <i class="fa fa-user"></i>
+                                <!-- <i class="fa fa-user"></i> -->
+                                <font-awesome-icon class="icon  controler-icon" icon="star" size="1x" :style="{ color: '#9b9b9b' }"/>
                                 <span>Login Page</span>
                             </a>
                         </li>
@@ -427,12 +436,8 @@
 
 
 
-
-
-
 <style scoped src="../assets/bs3/css/bootstrap.min.css"></style>
 <style scoped src="../assets/css/bootstrap-reset.css"></style>
-
 <style scoped src="../assets/css/style.css"></style>
 <style scoped src="../assets/css/style-responsive.css"></style>
 
