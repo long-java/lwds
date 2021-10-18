@@ -51,7 +51,32 @@ Route::get("/comment-post/{id}",[CommentPostController::class,'getCommentPostByI
 Route::get("/tags",[TagController::class,'index']);
 
 
-//SANCTUM
+
+//MIDDLEWARE -> CHECK_ROLE => ADMIN
+Route::group(['middleware' => 'checkrole'], function(){
+
+    //CHECK ROUTE
+    Route::get("/check-role-admin",function() {
+        return true;
+    });
+
+    //ADMIN - MESSAGES
+    Route::get("/get-all-messages",[ChatController::class,'getAllMessages']);
+    Route::delete("/messages/destroy/{ids}",[ChatController::class,'destroy']);
+    Route::put("/message/{id}",[ChatController::class,'update']);
+    
+    //ADMIN - USERS
+    Route::get("/get-all-users",[UserController::class,'getAllUsers']);
+    Route::delete("/users/destroy/{ids}",[UserController::class,'destroy']);
+    Route::put("/user/{id}",[UserController::class,'update']);
+
+
+});
+//END -- ADMIN
+
+
+
+//AUTH:SANCTUM
 Route::group(['middleware' => 'auth:sanctum'], function(){
     //CHAT
     Route::get("/chat/rooms",[ChatController::class,'rooms']);
@@ -59,15 +84,6 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
     Route::post("/chat/room/{roomId}/message",[ChatController::class,'newMessage']);
     //END CHAT
 
-    //ADMIN - MESSAGES
-    Route::get("/get-all-messages",[ChatController::class,'getAllMessages']) -> withoutMiddleware('auth:sanctum');
-    Route::delete("/messages/destroy/{ids}",[ChatController::class,'destroy']) -> withoutMiddleware('auth:sanctum');
-    Route::put("/message/{id}",[ChatController::class,'update']) -> withoutMiddleware('auth:sanctum');
-
-    //ADMIN - USERS
-    Route::get("/get-all-users",[UserController::class,'getAllUsers']) -> withoutMiddleware('auth:sanctum');
-    Route::delete("/users/destroy/{ids}",[UserController::class,'destroy']) -> withoutMiddleware('auth:sanctum');
-    Route::put("/user/{id}",[UserController::class,'update']) -> withoutMiddleware('auth:sanctum');
 
 
 

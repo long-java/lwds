@@ -36,6 +36,8 @@ class RegisterController extends Controller
             'password' => Hash::make($request -> password),
         ]);
 
+        $user -> roles() -> syncWithoutDetaching([3]);
+
         UserDetail::create([
             'user_id' => $user -> id,
         ]);

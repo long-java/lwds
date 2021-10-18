@@ -56,13 +56,16 @@ class UserController extends Controller
             $idsArr = explode(",",  $ids  );
             
             foreach($idsArr as $id){
-                $user = DB::table("users") -> where('id', $id);
+                // $user = DB::table("users") -> where('id', $id);
+                $user = User::find($id);
                 
                 if($user != null){
                     $rs = $user -> delete();
                     
                     $user_detail = DB::table("user_details") -> where('user_id', $id);
                     $rs2 = $user_detail -> delete();
+
+                    $rs3 = $user -> roles() ->  detach();
                 }
 
             }
@@ -132,22 +135,25 @@ class UserController extends Controller
         ]);
 
         $user = User::where('email', $request->email)->first();
-            if (!$user || !Hash::check($request->password, $user->password)) {
-                return response([
-                    'message' => 'These credentials do not match our records.'
-                ], 404);
-            }
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            return response([
+                'message' => 'These credentials do not match our records.'
+            ], 404);
+        }
 
-            Auth::attempt($request->only('email', 'password'));
-        
-            $token = $user->createToken('my-app-token')->plainTextToken;
+        $role = $user -> roles -> first();
 
-            return response() -> json([
-                'status' => true,
-                'code' => 200,
-                'user' => $user,
-                'token' => $token
-            ]);
+        Auth::attempt($request->only('email', 'password'));
+        $token = $user->createToken('my-app-token')->plainTextToken;
+
+
+        return response() -> json([
+            'status' => true,
+            'code' => 200,
+            'user' => $user,
+            'role' => $role,
+            'token' => $token
+        ]);
     }
 
     public function logout(Request $request){

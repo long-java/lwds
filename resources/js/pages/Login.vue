@@ -136,6 +136,9 @@ export default {
 
         loginUser(){
             axios.post('/api/login', this.form).then((res) =>{
+
+				console.log(res.data);
+
                 localStorage.setItem('token', res.data.token);
                 this.$router.push({ name: "posts"}); 
                 // next()

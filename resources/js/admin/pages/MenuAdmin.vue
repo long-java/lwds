@@ -162,7 +162,7 @@
 
 
                             <router-link class=""
-                                :class="[{active: $route.name === 'dashboard'}]" to="/ad/" > 
+                                :class="[{active: $route.name === 'dashboard'}]" to="/admin/" > 
                                     <i class="fa fa-dashboard"></i> 
                                     <span>  Dashboard </span>
                             </router-link>
@@ -180,7 +180,7 @@
                             <ul class="sub">
                                 <li>
                                     <router-link class=""
-                                        :class="[{active: $route.name === 'all_message'}]" to="/ad/all-messages" >  All Message
+                                        :class="[{active: $route.name === 'all_message'}]" to="/admin/all-messages" >  All Message
                                     </router-link>
                                 </li>
 
@@ -192,10 +192,15 @@
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span>UI Elements</span>
+                                <span>User Manager</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="general.html">General</a></li>
+                                <li>
+                                    <router-link class=""
+                                        :class="[{active: $route.name === 'all_user'}]" to="/admin/all-users" >  All User
+                                    </router-link>
+                                </li>
+
                                 <li><a href="buttons.html">Buttons</a></li>
                             </ul>
                         </li>

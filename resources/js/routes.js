@@ -20,6 +20,8 @@ import my_follow_from from './components/MyFollowFrom'
 
 
 //ADMIN
+import failed_role from './admin/components/FailedRole'
+
 import menu_admin from './admin/pages/MenuAdmin'
 import dashboard from './admin/pages/Dashboard'
 import all_message from './admin/pages/AllMessage'
@@ -32,14 +34,33 @@ import all_user from './admin/pages/AllUser'
 const routes = [
 
     //ADMIN
+    { path: '/failed-role', component: failed_role, name: 'failed_role'},
     { 
-        path: '/ad', 
+        path: '/admin', 
         component: menu_admin, 
-        name: 'menu_admin', 
+
+        //Check route - role:admin
+        beforeEnter: (to, form, next) =>{
+            axios.get('/api/check-role-admin',
+                {
+                    headers:{
+                                Authorization: 'Bearer ' + localStorage.getItem('token'),
+                            }
+                }
+            )
+            .then(()=>{
+                next()
+            }).catch(()=>{
+                return next({ 
+                    name: 'failed_role'
+                })
+            })
+       },
+
         children: [
-            { path: '/ad/', component: dashboard, name: 'dashboard'},
-            { path: '/ad/all-users', component: all_user, name: 'all_user'},
-            { path: '/ad/all-messages', component: all_message, name: 'all_message'},
+            { path: '/', component: dashboard, name: 'dashboard'},
+            { path: '/admin/all-users', component: all_user, name: 'all_user'},
+            { path: '/admin/all-messages', component: all_message, name: 'all_message'},
         ]
     
     
@@ -47,7 +68,7 @@ const routes = [
 
     
 
-
+    //GUEST
     { path: '*', component: notfound, name: 'notfound'},
     { path: '/exam', component: exam, name: 'exam'},
     {
