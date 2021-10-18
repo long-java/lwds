@@ -21,9 +21,9 @@ class UserRoleSeeder extends Seeder
             array('id' => '4','role_id' => '3','user_id' => '4'),
             array('id' => '5','role_id' => '3','user_id' => '5'),
             array('id' => '6','role_id' => '3','user_id' => '9'),
-            array('id' => '7','role_id' => '3','user_id' => '17'),
-            array('id' => '8','role_id' => '3','user_id' => '18'),
-            array('id' => '9','role_id' => '3','user_id' => '19'),
+            array('id' => '7','role_id' => '3','user_id' => '10'),
+            array('id' => '8','role_id' => '3','user_id' => '11'),
+            array('id' => '9','role_id' => '3','user_id' => '12'),
         );
           
         
