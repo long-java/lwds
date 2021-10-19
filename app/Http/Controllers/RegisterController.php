@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\UserDetail;
 use Illuminate\Support\Facades\Hash;
 use App\Services\StringHandling;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -29,7 +30,11 @@ class RegisterController extends Controller
         $name = $request -> name;
         $user_web = $this -> stringHandling -> nameToUserWeb($name);
 
+        //heroku
+        $maxId = DB::table('users')->max('id');
+
         $user = User::create([
+            'id' => $maxId + 1,
             'name' => $request -> name,
             'email' => $request -> email,
             'user_web' => $user_web,
