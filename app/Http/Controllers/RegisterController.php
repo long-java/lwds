@@ -31,17 +31,24 @@ class RegisterController extends Controller
         $user_web = $this -> stringHandling -> nameToUserWeb($name);
 
         //heroku
-        $maxId = DB::table('users')->max('id');
-
+        $maxUser = DB::table('users')->max('id');
         $user = User::create([
-            'id' => $maxId + 1,
+            'id' => $maxUser + 1,
             'name' => $request -> name,
             'email' => $request -> email,
             'user_web' => $user_web,
             'password' => Hash::make($request -> password),
         ]);
 
-        $user -> roles() -> syncWithoutDetaching([3]);
+        // $user -> roles() -> syncWithoutDetaching([3]);
+
+        //heroku
+        $maxRole = DB::table('user_role')->max('id');
+        $role = DB::table('user_role') -> insert([
+                    'id' => $maxRole + 1,
+                    'user_id' => $user -> id,
+                    'role_id' => 3,
+        ]);
 
         UserDetail::create([
             'user_id' => $user -> id,
