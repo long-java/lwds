@@ -50,7 +50,10 @@ class RegisterController extends Controller
                     'role_id' => 3,
         ]);
 
-        UserDetail::create([
+        //heroku
+        $maxUserDetail = DB::table('user_details')->max('id');
+        $userDetail = UserDetail::create([
+            'id' => $maxUserDetail + 1,
             'user_id' => $user -> id,
         ]);
 
