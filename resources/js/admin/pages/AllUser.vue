@@ -133,19 +133,22 @@
 
                             <!-- action delete edit -->
                             <template v-slot:[`item.actions`]="{ item }">
-                                <v-icon small class="mr-2" @click="editItem(item)">
-                                    mdi-pencil
-                                </v-icon>
 
-                                <v-icon small @click="deleteItem(item)">
-                                    mdi-delete
-                                </v-icon>
+                              <v-icon small class="mr-2" @click="editItem(item)">
+                                  mdi-pencil
+                              </v-icon>
 
-                                </template>
+                              <v-icon small @click="deleteItem(item)">
+                                  mdi-delete
+                              </v-icon>
+
+                            </template>
+
                                 <template v-slot:no-data>
                                 <v-btn color="primary" @click="initialize">
                                     Reset
                                 </v-btn>
+
                             </template>
 
                         </v-data-table>
@@ -176,7 +179,7 @@
         { text: 'id', value: 'id', width: '6%' },
         { text: 'name', align: 'start', sortable: true, value: 'name', width: '15%'},
         { text: 'user_web', value: 'user_web',width: '15%' },
-        { text: 'eamail', value: 'email', width: '25%' },
+        { text: 'email', value: 'email', width: '25%' },
         { text: 'created_at', value: 'created_at', sortable: true, width: '20%' },
         { text: 'posts', value: 'count_posts', width: '9%' },
         { text: 'action', value: 'actions', width: '13%' },
