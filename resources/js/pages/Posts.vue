@@ -11,7 +11,10 @@
         <div class="noti "> 
             <h5 class="fb"><a href="https://fb.com"> >>&ensp;LEWANDOWSKI&ensp;>>&ensp;Tham gia Facebook group "Lazy Community" để cùng nhau học tập và kết nối&ensp;>> </a> 
                 <router-link to="/post-up">
-                    <button class="write-post"> Viết bài</button>
+                    <button class="write-post"> 
+                        <font-awesome-icon class="icon  controler-icon" icon="pen-alt" size="1x" :style="{ color: '#000000' }"/>
+                        
+                        Viết bài</button>
                 </router-link>
             </h5>
         </div>
@@ -203,7 +206,6 @@
         
     }
 </script>
-
 
 <style scoped> 
     .time-before{

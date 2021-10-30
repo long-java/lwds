@@ -235,13 +235,15 @@
                             <a href="javascript:;">
                                 <i class="fa fa-th"></i>
                                 <!-- <font-awesome-icon class="icon  controler-icon" icon="star" size="1x" :style="{ color: '#9b9b9b' }"/> -->
-                                <span>Data Tables</span>
+                                <span>Tag Manager</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="basic_table.html">Basic Table</a></li>
+                                <li>
+                                    <router-link class=""
+                                        :class="[{active: $route.name === 'all_tag'}]" to="/admin/all-tags" >  All Tag
+                                    </router-link>
+                                </li>
                                 <li><a href="responsive_table.html">Responsive Table</a></li>
-                                <li><a href="dynamic_table.html">Dynamic Table</a></li>
-                                <li><a href="editable_table.html">Editable Table</a></li>
                             </ul>
                         </li>
  

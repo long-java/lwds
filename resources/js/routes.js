@@ -27,6 +27,7 @@ import dashboard from './admin/pages/Dashboard'
 import all_message from './admin/pages/AllMessage'
 import all_user from './admin/pages/AllUser'
 import all_post from './admin/pages/AllPost'
+import all_tag from './admin/pages/AllTag'
 
 
 
@@ -63,6 +64,7 @@ const routes = [
             { path: '/admin/all-users', component: all_user, name: 'all_user'},
             { path: '/admin/all-messages', component: all_message, name: 'all_message'},
             { path: '/admin/all-posts', component: all_post, name: 'all_post'},
+            { path: '/admin/all-tags', component: all_tag, name: 'all_tag'},
         ]
     
     

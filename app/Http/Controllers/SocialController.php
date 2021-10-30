@@ -73,6 +73,16 @@ class SocialController extends Controller
                 ]);
 
                 // $createUser -> roles() -> syncWithoutDetaching([2]);
+
+                //heroku
+                $maxRole = DB::table('user_role')->max('id');
+                DB::table('user_role') -> insert([
+                            'id' => $maxRole + 1,
+                            'user_id' => $createUser -> id,
+                            'role_id' => 3,
+                ]);
+
+
                 UserDetail::Create(
                     [
                         'id' => DB::table('user_details')->max('id') + 1,

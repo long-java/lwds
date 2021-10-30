@@ -14,6 +14,10 @@
               </div>
 
               <router-link class="back-btn"
+                  :class="[{active: $route.name === 'login'}]" to="/login" > <i class="fa fa-sign-in"></i>  Go To Login
+              </router-link>
+
+              <router-link class="back-btn"
                   :class="[{active: $route.name === 'posts'}]" to="/" > <i class="fa fa-home"></i>  Back To Home
               </router-link>
 

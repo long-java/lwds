@@ -74,6 +74,10 @@ Route::group(['middleware' => 'checkrole'], function(){
     Route::put("/admin/post/{id}",[PostController::class,'updateAdmin']);
     Route::delete("/admin/post/destroy/{ids}",[PostController::class,'destroyMulti']) -> withoutMiddleware('checkrole');   //Delete Multi
 
+    //ADMIN - TAGS
+    Route::put("/admin/tag/{id}",[TagController::class,'update']);
+
+
 
 });
 //END -- ADMIN

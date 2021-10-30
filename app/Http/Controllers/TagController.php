@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\TagService;
 use Symfony\Component\HttpFoundation\Response;
+use App\Models\Tag;
 
 class TagController extends Controller
 {
@@ -13,11 +14,7 @@ class TagController extends Controller
     public function __construct(TagService $tagService){
         $this -> tagService = $tagService;
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index(Request $request)
     {
         $e = $request -> get('e');
@@ -30,69 +27,62 @@ class TagController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    //ADMIN
     public function update(Request $request, $id)
     {
-        //
+        try{
+            // $data = [];
+            $data['text'] = $request -> text;
+            $data['description'] = $request -> description;
+
+            $tag = $this -> tagService -> save($data, $id);
+
+            return response() -> json([
+                'status' => true,
+                'tags' => $tag,
+            ]);
+
+            
+        }catch(\Exception $e){
+            return response() -> json([
+                'status' => false,
+                'message' => $e
+            ]);
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+
+    //ADMIN - DELETE MULTI
+    public function destroyMulti($ids){
+        try{
+            $rs = $this -> tagService -> destroyMulti($ids);
+            return response()->json([
+                'status' => true,
+                'success'=>"Messages Deleted successfully",
+                'rs' => $rs,
+            ]);
+
+        }catch(\Exception $e){
+            return response()->json([
+                'ids' => $ids,
+                'idArr' => explode(",", $ids),
+                'status' => false,
+                'message' => $e
+            ]);
+        }
     }
 }

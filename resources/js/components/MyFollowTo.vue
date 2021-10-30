@@ -181,6 +181,7 @@ export default {
         border-radius: 5px;
         font-size: 13px;
         color:#fff;
+        padding: 2px 6px 2px 6px;
     }
 
     .bt-fl:hover{
